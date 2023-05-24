@@ -3,7 +3,7 @@ import { OrdersController } from './orders.controller';
 import { OrdersService } from './orders.service';
 import { OrdersMockService } from './orders-mock.service';
 import { StoreService } from './store.service';
-import { StoreModule } from 'src/store/store.module';
+import { StoreModule } from 'src/store/store-dynamic.module';
 function createStore(config: facebookConfig): StoreService {
   console.log('123', config);
   return new StoreService();
@@ -38,6 +38,11 @@ const configFacebook = {
       ],
     },
   ],
-  imports: [StoreModule],
+  imports: [
+    StoreModule.register({
+      dirname: 'store',
+      filename: 'custom.json',
+    }),
+  ],
 })
 export class OrdersModule {}
