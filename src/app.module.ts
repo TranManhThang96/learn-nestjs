@@ -9,6 +9,7 @@ import { DiskModule } from './disk/disk.module';
 import { PowerModule } from './power/power.module';
 import { UsersModule } from './users/users.module';
 import { ReportsModule } from './reports/reports.module';
+import { OrdersModule } from './orders/orders.module';
 import { User } from './users/user.entity';
 import { Report } from './reports/report.entity';
 @Module({
@@ -26,6 +27,7 @@ import { Report } from './reports/report.entity';
     PowerModule,
     UsersModule,
     ReportsModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
